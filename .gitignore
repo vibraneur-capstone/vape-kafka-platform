@@ -1,1 +1,3 @@
 .DS_Store 
+kafka-2.3.0/logs/
+.idea/
