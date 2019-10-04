@@ -17,7 +17,10 @@ variables:
 steps:
 - script: |
     apt-get install shellcheck
-    shellcheck ./scripts/vape-docker-kafka-start.sh
+    for script in ./scripts/*.sh ; do
+    echo "checking $script"
+    shellcheck $script
+    done
   displayName: 'Install shellcheck and validate scripts'
 
 - task: Docker@2
