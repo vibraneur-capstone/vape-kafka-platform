@@ -1,0 +1,29 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+  branches:
+      include:
+      - '*'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  imageName: 'pipeline-build-kafka-docker-image'
+
+steps:
+- script: |
+    apt-get install shellcheck
+    shellcheck ./scripts/vape-docker-kafka-start.sh
+  displayName: 'Install shellcheck and validate scripts'
+
+- task: Docker@2
+  displayName: Build kafka image for VAPE
+  inputs:
+    repository: $(imageName)
+    command: build
+    Dockerfile: ./Dockerfile
+  
