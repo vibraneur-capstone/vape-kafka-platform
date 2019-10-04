@@ -18,7 +18,7 @@ if [ "$len" == 0 ]; then
   echo To run more broker, pass the desired number as argument
   numOfBroker=3
 else
-  numOfBroker=args[0]
+  numOfBroker=$1
 fi
 
 printInfo
