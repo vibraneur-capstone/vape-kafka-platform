@@ -16,7 +16,9 @@ if [ "$1" == zookeeper ]; then
   else
     echo running zookeeper using config vapeZooKeeperConfig/zookeeper.properties
     sleep 2
-    sudo echo "$2" >> /tmp/zookeeper/myid
+    mkdir /tmp/zookeeper | exit 1
+    echo "$2" >> myid | exit 1
+    mv myid /tmp/zookeeper | exit 1
     sh ./vape/kafka/bin/zookeeper-server-start.sh ./vape/resources/vapeZooKeeperConfig/zookeeper.properties
   fi
 elif [ "$1" == broker ]; then
