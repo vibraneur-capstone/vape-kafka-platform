@@ -1,6 +1,6 @@
 FROM openjdk
 
-EXPOSE 2181 9092 9093 9094 9095
+EXPOSE 2181 2891 3881 9092
 
 COPY kafka-2.3.0 /vape/kafka
 

@@ -13,7 +13,7 @@ The built docker image contains kafka 2.3.0 distribution and zookeeper
 Zookeeper must be run prior to any broker instances
 
 ### Run Zookeeper from Docker image
-> run `docker run -it --name [name] --network host [image name] zookeeper`      
+> run `docker run -it --name [name] --net=host [image name] zookeeper`      
 > The above command boot up a docker container in which zookeeper runs. And all ports are exposed to host
 
 ### Run Kafka Broker from Docker image
