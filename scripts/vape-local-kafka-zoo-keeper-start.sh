@@ -8,6 +8,6 @@ osascript 2>/dev/null <<EOF
     end
     tell application "Terminal"
       activate
-      do script with command "kafka-2.3.0/bin/zookeeper-server-start.sh kafka-2.3.0/config/zookeeper.properties" in window 1
+      do script with command "kafka-2.3.0/bin/zookeeper-server-start.sh resources/vapeLocalConfig/zookeeper.properties" in window 1
     end tell
 EOF
