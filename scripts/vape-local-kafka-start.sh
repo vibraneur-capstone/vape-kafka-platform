@@ -14,6 +14,10 @@ osascript 2>/dev/null <<EOF
     tell application "Terminal"
       activate
       do script with command "kafka-2.3.0/bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic test" in window 1
+      do script with command "kafka-2.3.0/bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic FFT" in window 1
+      do script with command "kafka-2.3.0/bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic KURTOSIS" in window 1
+      do script with command "kafka-2.3.0/bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic RMS" in window 1
+      do script with command "kafka-2.3.0/bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic SENSOR" in window 1
     end tell
 EOF
 
